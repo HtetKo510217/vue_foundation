@@ -1,25 +1,30 @@
 <template>
-  <div class="modalBox">
-    <h1>Modal box</h1>
+  <div class="modalBox" :class="theme">
+    <slot>Modal box</slot>
   </div>
 </template>
 
 <script>
 export default {
-
+    props: ['theme']
 }
 </script>
 
 <style scoped>
  .modalBox {
-    border: 1px solid red;
     width: 400px;
     height: 300px;
-    background: darkred;
+    box-sizing: border-box;
     margin: 10px auto;
-}
-.modalBox h1 {
     color: #fff;
+    padding: 10px;
+}
+.success {
+    background: darkgreen;
+
+}
+.delete {
+    background: darkred;
 }
 
 </style>
